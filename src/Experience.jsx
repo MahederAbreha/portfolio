@@ -1,10 +1,18 @@
 import React from 'react';
-
+import { Container, Typography } from '@material-ui/core';
 function Experience() {
     return (
-        <div>
-            <h1>Work</h1>
-        </div>
+        <Container>
+            <Typography 
+            variant='h5'
+            align='center'
+            color='textSecondary'
+            gutterBottom
+            paragraph
+            >
+                Work
+            </Typography>
+        </Container>
     );
 }
 

@@ -1,48 +1,48 @@
 import React from 'react';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import {IconButton } from '@material-ui/core';
-import { useState } from "react"; 
-function Home() {
-const [selectedTab, setSelectedTab] = useState(0);
+import { IconButton, Avatar } from '@mui/material';
+import { Typewriter } from 'react-simple-typewriter';
+import { Typography } from '@material-ui/core';
+import './styles.css'; // Import your CSS file
 
-    let tabContent;
-    switch (selectedTab) {
-        case 0:
-            tabContent = (
-                <>
-                    <div >
-                        <h4>Hi there  </h4>
-                        <h2>Maheder Abreha</h2>
-                    </div>
-                    <a href="https://www.linkedin.com/in/maheder-abreha/">
-                        <i className="fa fa-linkedin"></i>
-                        <IconButton size='large' aria-label='logo'>
-                            <LinkedInIcon />
-                        </IconButton>
-                    </a>
-                    <a href="https://github.com/MahederAbreha">
-                        <i className="fa fa-github"></i>
-                        <IconButton size="large" aria-label="logo">
-                            <GitHubIcon />
-                        </IconButton>
-                    </a>
+const Home = () => {
+  const handleType = (count) => {
+    console.log(count);
+  };
 
-                </>
-            );
-            break;
-        default:
-            tabContent = null;
-    }
-    return (
-        <div>
-            <div style={{ padding: '20px' }}>
-                {tabContent}
-            </div>
-            <h1>My intro goes here</h1>
+  return (
+    <div className="main-container">
+      <div className="name-container">
+        <Typography variant="h1" color="primary">
+          Maheder Abreha
+        </Typography>
+        <Typography variant='h3' align='center' color='textSecondary' gutterBottom paragraph>
+          <Typewriter
+            words={['Software Engineer', 'Full-Stack Developer', 'Back-End Developer']}
+            loop={58887}
+            cursor
+            cursorStyle="_"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+            onType={handleType}
+          />
+        </Typography>
+        <div className="social-icons">
+          <IconButton href="https://www.linkedin.com/in/maheder-abreha/" target="_blank" rel="noopener noreferrer" size="large" aria-label="LinkedIn">
+            <LinkedInIcon />
+          </IconButton>
+          <IconButton href="https://github.com/MahederAbreha" target="_blank" rel="noopener noreferrer" size="large" aria-label="GitHub">
+            <GitHubIcon />
+          </IconButton>
         </div>
-        
-    );
+      </div>
+      <div className="avatar-container">
+        <Avatar alt="Maheder Abreha" src="photo.jpg" sx={{ width: 400, height: 400 }} />
+      </div>
+    </div>
+  );
 }
 
 export default Home;

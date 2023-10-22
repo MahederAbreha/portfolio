@@ -1,11 +1,19 @@
 import React from 'react';
+import { Container, Typography } from '@material-ui/core';
 
 function Skills() {
     return (
-        <div>
-            <h1>Skills</h1>
-            
-        </div>
+        <Container>
+        <Typography 
+        variant='h5'
+        align='center'
+        color='textSecondary'
+        gutterBottom
+        paragraph
+        >
+            Skills
+        </Typography>
+    </Container>
     );
 }
 

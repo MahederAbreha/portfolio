@@ -1,10 +1,20 @@
+import { Container, Typography } from '@material-ui/core';
 import React from 'react';
 
 function Edu() {
     return (
-        <div>
-           <h1>Education</h1> 
-        </div>
+        <Container>
+            <Typography 
+            variant='h5'
+            align='center'
+            color='textSecondary'
+            gutterBottom
+            paragraph
+            >
+                Education
+            </Typography>
+        </Container>
+          
     );
 }
 
