@@ -16,7 +16,6 @@ import Contact from './Contact';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-
   return (
     <div
       role="tabpanel"
@@ -33,20 +32,17 @@ function TabPanel(props) {
     </div>
   );
 }
-
 TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.any.isRequired,
   value: PropTypes.any.isRequired,
 };
-
 function a11yProps(index) {
   return {
     id: `scrollable-auto-tab-${index}`,
     'aria-controls': `scrollable-auto-tabpanel-${index}`,
   };
 }
-
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -54,7 +50,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
   },
 }));
-
 export default function ScrollableTabsButtonAuto() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
@@ -69,7 +64,7 @@ export default function ScrollableTabsButtonAuto() {
         <Tabs
           value={value}
           onChange={handleChange}
-          indicatorColor="primary"
+          indicatorColor="secondary"
           textColor="primary"
           variant="scrollable"
           scrollButtons="auto"
@@ -108,12 +103,3 @@ export default function ScrollableTabsButtonAuto() {
     </div>
   );
 }
-
-{/* <HeaderItem to="/" label="Home" />
-<HeaderItem to="/about" label="About" />
-<HeaderItem to="/skills" label="Skills" />
-<HeaderItem to="/experience" label="Experience" />
-<HeaderItem to="/education" label="Education" />
-<HeaderItem to="/blog" label="Blog" />
-<HeaderItem to="/connect" label="Connect" />
-<HeaderItem to="/album" label="Album" /> */}
