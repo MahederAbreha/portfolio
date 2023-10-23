@@ -46,7 +46,9 @@ export default function Album() {
           {images.map((image, index) => (
             <Grid item key={image} xs={12} sm={6} md={4}>
               <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', cursor: 'pointer' }} onClick={() => { setLightboxOpen(true); setPhotoIndex(index); }}>
-                <Box><img src={image.src} alt={`Image ${index + 1}`} style={{ height: '10rem', width: '17.78rem'}} /></Box>
+                <Box>
+                  <img loading='lazy' src={image.src} alt={`Image ${index + 1}`} style={{ height: '10rem', width: '17.78rem'}} />
+                </Box>
                 <CardContent sx={{ flexGrow: 1 }}>
                   <Typography gutterBottom variant="h5" component="h2">
                     { image.heading }
