@@ -73,7 +73,7 @@ function Copyright() {
                         // 16:9
                         pt: '56.25%',
                       }}
-                      image="https://picsum.photos/200/300"
+                      src="https://picsum.photos/200/300"
                     />
                     <CardContent sx={{ flexGrow: 1 }}>
                       <Typography gutterBottom variant="h5" component="h2">
