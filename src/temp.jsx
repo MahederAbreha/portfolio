@@ -10,9 +10,10 @@ import Home from './Introduction';
 import About from './About';
 import Skills from './Skills';
 import Experience from './Experience';
-import Edu from './Edu';
 import Album from './Album';
 import Contact from './Contact';
+import Blog from './Blog';
+import Education from './Education';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -75,8 +76,9 @@ export default function ScrollableTabsButtonAuto() {
           <Tab label="Skills" {...a11yProps(2)} />
           <Tab label="Experience" {...a11yProps(3)} />
           <Tab label="Education" {...a11yProps(4)} />
-          <Tab label="Album" {...a11yProps(5)} />
-          <Tab label="Connect" {...a11yProps(6)} />
+          <Tab label="Blog" {...a11yProps(5)} />
+          <Tab label="Album" {...a11yProps(6)} />
+          <Tab label="Connect" {...a11yProps(7)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -92,12 +94,15 @@ export default function ScrollableTabsButtonAuto() {
         <Experience />
       </TabPanel>
       <TabPanel value={value} index={4}>
-        <Edu />
+        <Education />
       </TabPanel>
       <TabPanel value={value} index={5}>
-        <Album />
+        <Blog />
       </TabPanel>
       <TabPanel value={value} index={6}>
+        <Album />
+      </TabPanel>
+      <TabPanel value={value} index={7}>
         <Contact />
       </TabPanel>
     </div>
