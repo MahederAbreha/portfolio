@@ -17,3 +17,15 @@ October 22nd, 2023
 * Started Validation
 * Studying about blogs
 
+October 23rd, 2023
+
+* Finished contact form validation
+* Implemented the backend API with Lambda
+* working on frontend Blog
+* Done setting up of Cloudfront
+
+October 24th, 2023
+
+* Done DNS configuration and Email  verification
+* Certificate done
+
