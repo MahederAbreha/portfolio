@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Container, Typography, Card, CardContent, Grid, ThemeProvider, createTheme, Box } from '@mui/material';
+import { Container, Card, CardContent, Grid, ThemeProvider, createTheme, Box } from '@mui/material';
 import Lightbox from 'react-image-lightbox';
+import { Typography } from '@material-ui/core';
 import 'react-image-lightbox/style.css';
 
 const defaultTheme = createTheme();
@@ -10,20 +11,20 @@ export default function Album() {
   const [photoIndex, setPhotoIndex] = useState(0);
 
   const images = [
-    { src:'/album/photo1.jpg', heading:'Geode Park', desc:'something nice to be said about the picture' },
-    { src:'/album/photo2.jpg', heading:'Bayfront', desc:'something more nice to be said about this one too' },
-    { src:'/album/photo (1).jpg', heading:'some place', desc:'something more nice to be said about this one too' },
-    { src:'/album/photo (2).jpg', heading:'some place', desc:'something more nice to be said about this one too' },
-    { src:'/album/photo (3).jpg', heading:'some place', desc:'something more nice to be said about this one too' },
-    { src:'/album/photo (4).jpg', heading:'some place', desc:'something more nice to be said about this one too' },
-    { src:'/album/photo (5).jpg', heading:'some place', desc:'something more nice to be said about this one too' },
-    { src:'/album/photo (6).jpg', heading:'some place', desc:'something more nice to be said about this one too' },
-    { src:'/album/photo (7).jpg', heading:'some place', desc:'something more nice to be said about this one too' },
-    { src:'/album/photo (8).jpg', heading:'some place', desc:'something more nice to be said about this one too' },
-    { src:'/album/photo (9).jpg', heading:'some place', desc:'something more nice to be said about this one too' },
-    { src:'/album/photo (10).jpg', heading:'some place', desc:'something more nice to be said about this one too' },
-    { src:'/album/photo (11).jpg', heading:'some place', desc:'something more nice to be said about this one too' },
-    { src:'/album/photo (12).jpg', heading:'some place', desc:'something more nice to be said about this one too' },
+    { src:'/album/photo1.jpg', heading:'Geode Park', desc:'' },
+    { src:'/album/photo2.jpg', heading:'Geode Park', desc:'Takes you to the infinity' },
+    { src:'/album/photo (1).jpg', heading:'Yellowstone National Park', desc:'' },
+    { src:'/album/photo (2).jpg', heading:'Waterworks Park', desc:'' },
+    { src:'/album/photo (3).jpg', heading:'BYU', desc:'A tranquil sanctuary for prayer and reflection, providing a peaceful escape from the chaos of everyday life' },
+    { src:'/album/photo (4).jpg', heading:'Snow Bliss', desc:'Taste of Winter' },
+    { src:'/album/photo (5).jpg', heading:'Spring', desc:'Lots of excitements' },
+    { src:'/album/photo (6).jpg', heading:'Waterworks Park', desc:'Walk in the park' },
+    { src:'/album/photo (7).jpg', heading:'Geode Park', desc:'the picture that reminds you that "Life is full of Light"' },
+    { src:'/album/photo (8).jpg', heading:'some place', desc:'Done for the day' },
+    { src:'/album/photo (9).jpg', heading:'Shades of purple', desc:'' },
+    { src:'/album/photo (10).jpg', heading:'Fishing', desc:'Beautiful day to fish' },
+    { src:'/album/photo (11).jpg', heading:'Calm vibes', desc:'' },
+    { src:'/album/photo (12).jpg', heading:'Chihuly Garden and Glass', desc:'' },
   ];
 
   return (
@@ -34,13 +35,15 @@ export default function Album() {
             component="h1"
             variant="h2"
             align="center"
-            color="text.primary"
+            style={{color: '#ec407a' }}
             gutterBottom
           >
             Photography
           </Typography>
+          <Typography variant='h6' color='textSecondary' align='center'>Sharing some of my favorite moments, hoping they resonate with you as much as they do with me. Get ready for a journey of pure awesomeness!</Typography>
         </Container>
       </Box>
+      <br></br>
       <Container sx={{ py: 8 }} maxWidth="md">
         <Grid container spacing={4} style={{ marginTop: '-6rem'}}>
           {images.map((image, index) => (
@@ -53,7 +56,7 @@ export default function Album() {
                   <Typography gutterBottom variant="h5" component="h2">
                     { image.heading }
                   </Typography>
-                  <Typography>
+                  <Typography color="textSecondary">
                     { image.desc }
                   </Typography>
                 </CardContent>

@@ -3,6 +3,8 @@ import { IconButton, Box, FormGroup, FormControl, InputLabel, Input, Button, Tex
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
+const p = (text) => console.log(text);
+const Lambda_URL = 'https://fgasyjzdghoqg7ktaanyijspha0xdnct.lambda-url.us-east-1.on.aws/';
 const socialIcons = {
     marginTop: '20px',
 
@@ -27,59 +29,49 @@ const textAreaStyles = {
 };
 
 function Contact() {
-    const [send, setSend] = useState(false);
+    const [sending, setSending] = useState(false);
     const [sent, setSent] = useState(false);
     const innerFormStyles = {
         display: sent ? 'none' : 'flex',
         flexDirection: 'column',
         width: '80%',
     };
+
     const handleSubmit = async (event) => {
         event.preventDefault();
-        setSend(true);
-        
+        setSending(true);
         const data = new FormData(event.currentTarget);
-        console.log("something actually happened");
-        const formData = {
-            name: data.get('name'),
-            email: data.get('email'),
-            phone: data.get('phone'),
-            subject: data.get('subject'),
-            message: data.get('message')
+        const payload = {
+            email: data.get("email"),
+            subject: data.get("subject"),
+            message: data.get("message"),
         };
-        console.log(formData);
-        await new Promise((result) => {
-
-            setTimeout(result, 2000)
-        });
-
-        try {
-            const response = await fetch("https://formsubmit.co/5c289225fcf9a1787c740e435d9b6e11", {
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+        p(payload);
+        fetch(Lambda_URL, {
+                mode: 'no-cors',
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    "Access-Control-Allow-Origin" : "*",
+                    "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
                 },
-                body: JSON.stringify(formData),
-            });
+                body: JSON.stringify(payload),
+            })
+            .then((response) => {
+                if (response.ok) {
+                    this.handleSuccess();
+                } else {
+                    // notify user
+                    //this.handleError();
+                }
+            })
+            .catch(() => {});
 
-            if (!response.ok) {
-                throw new Error(`Error sending form data: ${response.statusText}`);
-            }
-
-            const responseData = await response.json();
-            console.log('Form data sent successfully:', responseData);
-            setSent(true);
-        } catch (error) {
-            console.error(error.message);
-        } finally {
-            // Simulate loading for 2 seconds
-            await new Promise((resolve) => setTimeout(resolve, 2000));
-            setSend(false);
-        }
-
-        setSend(false);
+        setSending(false);
         setSent(true);
     };
+
     return (
         <>
             <div style={formStyle}>
@@ -125,9 +117,14 @@ function Contact() {
                 
                 {/* </Box> */}
                 <br /><br />
-                <form action="https://formsubmit.co/5c289225fcf9a1787c740e435d9b6e11" method="POST">
-                    <input type="text" name="name" required />
-                    <input type="email" name="email" required />
+                <form action="https://fgasyjzdghoqg7ktaanyijspha0xdnct.lambda-url.us-east-1.on.aws/" method="POST" 
+                onSubmit={handleSubmit}
+                style={{
+                    display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center', 
+                }}>
+                    <input placeholder="email" type='email' name="email" required />
+                    <input placeholder="subject" type="text" name="subject" />
+                    <textarea placeholder="message" name="message" required />
                     <button type="submit">Send</button>
                 </form>
                 <div className={socialIcons}>

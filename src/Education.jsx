@@ -1,5 +1,6 @@
 import React from 'react';
-import { Grid, Typography, useTheme } from '@mui/material';
+import { Grid } from '@mui/material';
+import { Typography } from '@material-ui/core';
 import SchoolIcon from '@mui/icons-material/School';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -41,7 +42,7 @@ function Education() {
                     </TimelineSeparator>
                     <TimelineContent sx={{ py: '12px', px: 2, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                         <Typography variant="h6" component="span">
-                            Work Experience
+                            Education
                         </Typography>
                     </TimelineContent>
                 </TimelineItem>

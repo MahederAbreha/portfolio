@@ -1,5 +1,6 @@
 import React from 'react';
-import { Grid, Typography, useTheme } from '@mui/material';
+import { Grid  } from '@mui/material';
+import { Typography } from '@material-ui/core';
 import WorkIcon from '@mui/icons-material/Work';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';

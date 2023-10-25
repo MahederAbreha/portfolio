@@ -14,15 +14,19 @@ const containerStyle = {
     },
 };
 const textContainerStyle = {
-
+    flex: 1,
+    paddingRight: '20px',
+    marginTop: '1rem',
 };
 const avatarContainerStyle = {
     flex: 1,
-    // display: 'flex',
-    justifyContent: 'flex-end',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '50px',
+    marginRight: '10px',
 
 };
-
 function About() {
     return (
         <Container style={containerStyle}>
