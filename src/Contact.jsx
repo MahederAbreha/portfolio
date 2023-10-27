@@ -42,7 +42,6 @@ function Contact() {
                 if (response.ok) {
                     this.handleSuccess();
                 } else {
-                    // notify user
                     this.handleError();
                 }
             })
@@ -58,7 +57,7 @@ function Contact() {
                         <Typography gutterBottom variant="h5">
                             Contact Me
                         </Typography>
-                        
+
                         {!sent && (
                             <form method='POST' onSubmit={handleSubmit} >
                                 <Grid container spacing={1}>
@@ -96,10 +95,10 @@ function Contact() {
 
                     </CardContent>
                     <div className={socialIcons}>
-                    <IconButton href='https://www.linkedin.com/in/maheder-abreha/' target='_blank'><LinkedInIcon /></IconButton>
-                    <IconButton href='https://github.com/MaherAbreha' target='_blank'><GitHubIcon /></IconButton>
-                    <IconButton href='mahederabreha@gmail.com' target='_blank'><AlternateEmailIcon /></IconButton>
-                </div>
+                        <IconButton href='https://www.linkedin.com/in/maheder-abreha/' target='_blank'><LinkedInIcon /></IconButton>
+                        <IconButton href='https://github.com/MaherAbreha' target='_blank'><GitHubIcon /></IconButton>
+                        <IconButton href='mahederabreha@gmail.com' target='_blank'><AlternateEmailIcon /></IconButton>
+                    </div>
                 </Card>
             </Grid>
         </>
