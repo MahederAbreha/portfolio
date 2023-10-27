@@ -27,10 +27,10 @@ const experiences = [
 ];
 
 function Experience() {
-    const separatorColor = '#ec407a'; 
+    const separatorColor = '#ec407a';
 
     return (
-        <Grid item xs={12} md={12} style={{ margin: '100px' }}>
+        <Grid container item xs={12} justifyContent="center" style={{ marginTop: '50px' }}>
             <Timeline>
                 <TimelineItem>
                     <TimelineSeparator>
@@ -40,7 +40,7 @@ function Experience() {
                         </TimelineDot>
                         <TimelineConnector style={{ backgroundColor: separatorColor }} />
                     </TimelineSeparator>
-                    <TimelineContent sx={{ py: '12px', px: 2, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                    <TimelineContent sx={{ py: '12px', px: 2, display: 'flex', flexDirection: 'column' }}>
                         <Typography variant="h6" component="span">
                             Work Experience
                         </Typography>
@@ -48,7 +48,7 @@ function Experience() {
                 </TimelineItem>
                 {experiences.map((experience, index) => (
                     <TimelineItem key={index}>
-                         <TimelineOppositeContent sx={{ py: '10px', px: 2, display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+                        <TimelineOppositeContent sx={{ py: '10px', px: 2, display: 'flex', flexDirection: 'column' }}>
                             <Typography variant='h6'>{experience.company}</Typography>
                             <Typography variant='body1'>{experience.date}</Typography>
                         </TimelineOppositeContent>
@@ -56,8 +56,8 @@ function Experience() {
                             <TimelineConnector style={{ backgroundColor: separatorColor }} />
                             <TimelineDot style={{ backgroundColor: separatorColor }} />
                             <TimelineConnector style={{ backgroundColor: separatorColor }} />
-                        </TimelineSeparator>   
-                        <TimelineContent sx={{ py: '12px', px: 2, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                        </TimelineSeparator>
+                        <TimelineContent sx={{ py: '12px', px: 2, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                             <Typography variant='h4'>{experience.title}</Typography>
                             <Typography variant='body1'>{experience.description}</Typography>
                         </TimelineContent>
