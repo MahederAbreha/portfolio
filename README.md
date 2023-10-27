@@ -28,4 +28,22 @@ October 24th, 2023
 
 * Done DNS configuration and Email  verification
 * Certificate done
+* Backend done with lambda and API Gateway
+
+October 25th, 2023
+
+* Studying for final 
+
+October 26th. 2023
+
+* Made some changes in the CSS file
+* Working on the Front end
+* Progresses on the blog
+
+October 27th, 2023
+
+* Finished the blog
+* Finalized the website
+* delpoyed the app to S3
+
 
