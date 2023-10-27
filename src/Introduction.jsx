@@ -43,6 +43,9 @@ const Home = () => {
             onType={handleType}
           />
         </Typography>
+        <Typography variant="h6" color="primary">
+          Seattle, WA
+        </Typography>
       </div>
     </div>
   );

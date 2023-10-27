@@ -4,7 +4,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
 
-const Lambda_URL = 'https://fgasyjzdghoqg7ktaanyijspha0xdnct.lambda-url.us-east-1.on.aws/';
+const API_Gateway= 'https://0cf04hy0b8.execute-api.us-east-1.amazonaws.com/connect/';
 const socialIcons = {
     marginTop: '20px',
 };
@@ -28,7 +28,7 @@ function Contact() {
         };
         await new Promise((resolve) => setTimeout(resolve, 1000));
         p(payload);
-        fetch(Lambda_URL, {
+        fetch(API_Gateway, {
             mode: 'no-cors',
             method: 'POST',
             headers: {
